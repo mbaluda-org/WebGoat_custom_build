@@ -1,1 +1,3 @@
-github/workflows/codeql.yml @mbaluda
+.github/workflows/codeql.yml @mbaluda
+.github/codeql/ @mbaluda
+.github/actions/custom_build/ @mbaluda
