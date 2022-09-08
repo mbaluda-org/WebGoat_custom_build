@@ -1,0 +1,19 @@
+name: "Custom Build"
+description: "Builds The Project"
+inputs:
+  languages:
+    description: "Language"
+    required: true
+    type: string
+runs:
+  using: "composite"
+  steps:
+    - name: set up JDK 17
+      if: inputs.languages == 'java'
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: 17
+        architecture: x64
+    - name: Autobuild
+      uses: github/codeql-action/autobuild@v2
